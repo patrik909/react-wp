@@ -1,0 +1,18 @@
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: blue;
+
+  .img-holder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: 35rem;
+
+    img {
+      width: 60%;
+    }
+  }
+}
