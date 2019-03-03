@@ -1,4 +1,3 @@
-
 ## React basics for using WordPress
 
 ```
@@ -47,7 +46,7 @@ add_filter('json_prepare_post', 'json_api_encode_acf');
 
 ### TODO
 
-* Reset CSS
 * Responsive variables
-* Dynamic menu from WordPress?
-https://wordpress.stackexchange.com/questions/209381/get-wp-navigation-menu-from-rest-api-v2
+* Dynamic menu from WordPress?  
+https://wordpress.stackexchange.com/questions/209381/get-wp-navigation-menu-from-rest-api-v2  
+https://stackoverflow.com/questions/34827981/wordpress-custom-page-template-and-wp-api
