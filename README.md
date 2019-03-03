@@ -38,3 +38,7 @@ function json_api_encode_acf($post) {
 }
 add_filter('json_prepare_post', 'json_api_encode_acf');
 ```
+
+### TODO
+
+* Install React Router
