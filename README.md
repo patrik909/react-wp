@@ -8,9 +8,15 @@ npm start
 
 ### Setup your WordPress
 
-Install WordPress and add this theme
-http://html5blank.com/
-
+Install WordPress and add this theme  
+http://html5blank.com/  
+  
+Install Plugins:  
+Classic Editor  
+ACF to REST API  
+Advanced Custom Fields  
+  
+  
 Add this code to function.php
 
 ```
