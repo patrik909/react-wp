@@ -1,48 +1,33 @@
 import React, { Component } from 'react';
+import { Router, Route } from 'react-router-dom';
+import history from './history';
 import './App.scss';
+
+// Pages
+import Home from './Pages/Home.js';
+import Page from './Pages/Page.js';
+import Archive from './Pages/Archive.js';
+import Single from './Pages/Single.js';
+
+//Components
+import Header from './Components/Header.js';
 
 class App extends Component {
 
-  state = {
-    posts: []
-  }
-
-  componentDidMount() {
-    
-    fetch('http://localhost:8888/wp-api/wp-json/wp/v2/posts')
-    .then((res) => res.json())
-    .then((posts) => {
-      this.setState({ posts });
-      console.log(posts);
-    });
-
-  }
-
   render() {
+
+    const SinglePage = ({ match }) => <Single match={match} />
+
     return (
-      <div className="App">
-        <main>
-          { 
-            this.state.posts.length !== 0 ? 
-             this.state.posts.map(post => {
-              return (
-                <div key={post.id}>
-                  <h1>{post.title.rendered}</h1>
-                  <div className="img-holder">
-                    <img src={post.featured_image_url} alt={post.featured_image_url} />
-                  </div>
-                  <h3>{post.excerpt.rendered}</h3>
-                  <p>{post.acf.a_field}</p>
-                </div>
-              )
-            })  
-            : 
-            <div>
-              waiting...
-            </div>
-          }
-        </main>
-      </div>
+      <Router history={history}>
+        <div id="App">
+          <Header />
+          <Route exact path="/" component={Home}/>
+          <Route path="/Page" component={Page}/>
+          <Route path="/Archive" component={Archive}/>
+          <Route path="/Single/:id" component={SinglePage}/>
+        </div>
+      </Router>
     );
   }
 }
