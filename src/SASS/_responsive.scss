@@ -1,18 +1,28 @@
-main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: blue;
+$big-width: 1340px;
+$small-width: 1100px;
+$ipad-width: 880px;
+$mobile-width: 720px;
 
-  .img-holder {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    height: 35rem;
+@mixin lg-desk {
+	@media (max-width: #{$big-width}) {
+		@content;
+	}
+}
 
-    img {
-      width: 60%;
-    }
-  }
+@mixin sm-desk {
+	@media (max-width: #{$small-width}) {
+		@content;
+	}
+}
+
+@mixin ipad {
+	@media (max-width: #{$ipad-width}) {
+		@content;
+	}
+}
+
+@mixin mobile {
+	@media (max-width: #{$mobile-width}) {
+		@content;
+	}
 }
